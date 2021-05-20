@@ -42,18 +42,14 @@ newTodo.appendChild(todoDate)
   newTodo.classList.add("todo-item");
   todoDiv.appendChild(newTodo);
    //Save to local - do this last
+   let newData = []
    dataInput= JSON.stringify(todoInput.value)
    localStorage.setItem("userInput",dataInput)
 
    dataTime = JSON.stringify(todoTime.value)
    localStorage.setItem("userTime",dataTime)
-
- 
-   //myText= localStorage.getItem("userData");
-   //newData = JSON.parse(myText)
-   //Save to local
-  
-  //Create Completed Button
+     //Create Completed Button
+     
   const completedButton = document.createElement("button");
   completedButton.innerHTML = `<i class="fas fa-check"></i>`;
   completedButton.classList.add("complete-btn");
@@ -111,17 +107,17 @@ function filterTodo(e) {
   });
 }
 
-// function saveLocalTodos(todo) {
-  let todos;
-  if (localStorage.getItem("todos") === null) {
-    todos = [];
-  } else {
-    todos = JSON.parse(localStorage.getItem("todos"));
-  }
-  todos.push(todo);
-  localStorage.setItem("todos", JSON.stringify(todos));
-// }
-// function removeLocalTodos(todo) {
+// // function saveLocalTodos(todo) {
+//   let todos;
+//   if (localStorage.getItem("todos") === null) {
+//     todos = [];
+//   } else {
+//     todos = JSON.parse(localStorage.getItem("todos"));
+//   }
+//   todos.push(todo);
+//   localStorage.setItem("todos", JSON.stringify(todos));
+// // }
+// // function removeLocalTodos(todo) {
 //   let todos;
 //   if (localStorage.getItem("todos") === null) {
 //     todos = [];
