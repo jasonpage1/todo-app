@@ -11,8 +11,9 @@
   }
 
   h1{
-    text-align: center; color: white; 
+    text-align: center; color: white;
   }
+  .sub-head{margin-left: 18px;}
 
 form input,
 form button {
@@ -37,4 +38,14 @@ form button:hover {
   color: white;
 }
 
+
 ul{list-style-type: none;}
+
+.check-box{ background-color: aquamarine; width: 60px; size: 100px;}
+
+.remove{width: 140px; background-color: rgb(134, 52, 52);}
+
+.all-done{ width: 90px; margin-left: 45%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+background-color: green;}

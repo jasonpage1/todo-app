@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">dd
+<html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
     <title></title>
@@ -15,20 +15,28 @@
     <main id="app">
       <h1>{{title}}</h1>
       <form @submit.prevent="addTodo">
-        <label for="newTodo">New Todo</label>
+        <div>
+        <label for="newTodo" class="sub-head">New Todo</label>
         <input v-model="newTodo" type="text" name="newTodo" id="newTodo" value="">
         <input  v-model="newTodoDate" type="date" class="todo-date" style="margin-right: 0.5rem;"/>
     <input   v-model="newTodoTime" type="time" class="todo-time"/>
-        <button type="submit" name="button">Add</button>
+    </div>
+        <button type="submit" :disabled="newTodo.length===0" name="button">Add</button>
       </form>
-      <button @click="allDone" type="button" name="button">All Done</button>
+     
       <ul>
-        <li v-for="todo in todos">
-          <input type="checkbox" v-model="todo.done" >
-          <span :class="{ done: todo.done }">{{todo.title}}</span>
-          <button @click="removeTodo(todo)" type="button" name="button">Remove</button>
+        <li v-for="todo in todos" @click="editTask()">
+          <input type="checkbox" v-model="todo.done" class="check-box" >
+          <span :class="{ 'done': todo.done }">{{todo.date}}</span>
+          <span :class="{ 'done': todo.done }">{{todo.text}}</span>
+          <span :class="{ 'done': todo.done }">{{todo.time}}</span>
+          <button> </button>
+          <button @click="removeTodo(todo)" type="button" name="button" class="remove">Remove</button>
+
+
         </li>
       </ul>
+      <button @click="allDone" type="button" name="button" class="all-done">All Done</button>
     </main>
     <script src="https://unpkg.com/vue@next"></script>
     <script src="https://unpkg.com/vue"></script>
